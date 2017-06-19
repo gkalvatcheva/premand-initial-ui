@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Premand Neonatal and Maternal Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- using jquery accordion to display filter tabs-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function($) {
+      $('.layers-panel').find('.accordion-toggle').click(function(){
+        
+        //Expand or collapse this panel
+        $(this).next().slideToggle('fast');
+
+        //Hide the other panels
+        $(".accordion-content").not($(this).next()).slideUp('fast');
+
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div id="root" style="height:100%;width:100%">
+      <div class="header">
+        <!-- start: logo -->
+        <div class="logo">
+          <div class="logo-img"><img src="images/logo.png"></div>
+          <h1>Premand Neonatal and Maternal Dashboard</h1>
+        </div>
+        <!-- end: logo -->
+        
+        <!-- start: nav -->
+        <div class="main-nav">
+          <ul>
+            <li><a href="#">Home</p></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Share</a></li>
+          </ul>
+        </div>
+        <!-- end: nav -->
+        
+        <!-- start: secondary logos -->
+        <div class="secondary-logo">
+          <a href="#"><img src="images/usaid-logo.png"></a>
+        </div>
+        <div class="secondary-logo">
+          <a href="#"><img src="images/umichigan.png"></a>
+        </div>
+        <!-- end: secondary logos -->
+        
+      </div>
+      <!-- end: header -->
+      
+      <!-- start: dashboard -->
+      <div class="dashboard">
+        
+        <!-- start: left panel -->
+        <div class="panel">
+          <div class="variables-main">
+            <ul>
+              <li>
+                <div class="selectable neonatal-death"></div>
+                Neonatal Death
+              </li>
+              <li>
+                <div class="selectable neonatal-nearmiss"></div>
+                Neonatal Near Miss
+              </li>
+              <li>
+                <div class="selectable maternal-death"></div>
+                Maternal Death
+              </li>
+              <li>
+                <div class="selectable maternal-nearmiss"></div>
+                Maternal Near Miss
+              </li>
+            </ul>
+          </div>
+          <!-- end: main variables -->
+          
+          <!-- start: secondary filter panel -->
+          <div class="secondary-filter-panel">
+            <div class="panel-header">
+              <span class="left">assessment data</span>
+              <span class="right reset">reset all</span>
+            </div>
+            
+            <div class="layers-panel">
+                <h4 class="accordion-toggle">Biomedical Cause
+                <span class="panel-header-info">(of Death/Near-Miss)</span>
+                <span class="selection-count">3 / 11</span>
+                </h4>
+                <div class="accordion-content">
+                  
+                  <!-- start: maternal cause of death or nearmiss -->
+                  <div class="filter">
+                    <div class="left label">Maternal Cause of Death/Near Miss</div>
+                    <ul class="filter-list">
+                      <li>
+                        <div class="filter-option selected"></div>
+                        Obstructed labour
+                      </li>
+                      <li>
+                        <div class="filter-option"></div>
+                        Maternal haemorrhage
+                      </li>
+                      <li>
+                        <div class="filter-option"></div>
+                        Hypertensive disorders of pregnancy
+                      </li>
+                      <li>
+                        <div class="filter-option"></div>
+                        Complications related to abortion
+                      </li>
+                      <li>
+                        <div class="filter-option selected"></div>
+                        Sepsis
+                      </li>
+                      <li>
+                        <div class="filter-option"></div>
+                        Other
+                      </li>
+                    </ul>          
+                  </div>
+                  
+                  <!-- end: maternal cause of death or nearmiss -->
+                  
+                  <!-- start: baby cause of death or near miss -->
+                  
+                  <div class="filter">
+                    <div class="left label">Neonatal Cause of Death/Near miss Variables</div>
+                    <ul class="filter-list">
+                      <li>
+                        <div class="filter-option selected"></div>
+                        All congenital malformations
+                      </li>
+                      <li>
+                        <div class="filter-option"></div>
+                        Birth asphyxia/birth trauma
+                      </li>
+                      <li>
+                        <div class="filter-option"></div>
+                        Neonatal sepsis
+                      </li>
+                      <li>
+                        <div class="filter-option"></div>
+                        Prematurity/low birth weight
+                      </li>
+                      <li>
+                        <div class="filter-option"></div>
+                        Other
+                      </li>
+                    </ul>          
+                  </div>
+                  
+                  <!-- end: baby cuase of death or near miss -->
+                  
+                  
+                </div>
+                <h4 class="accordion-toggle">Baby
+                  <span class="selection-count">1 / 2</span>
+                </h4>
+                
+                <div class="accordion-content">
+                  <div class="filter">
+                    <div class="left label fixed-width">Baby Gender</div>
+                    <div class="filter-field left">
+                      <div class="filter-option selected"></div>
+                      <span class="option">Male</span>
+                    </div>
+                    <div class="filter-field left">
+                      <div class="filter-option"></div>
+                      <span class="option">Female</span>
+                    </div>                  
+                  </div>
+                  
+                  <div class="filter">
+                    <div class="left label fixed-width">Baby Age</div>
+                    <ul class="filter-list floated-list">
+                      <li>
+                        <div class="filter-option"></div>
+                        < 24 hrs
+                      </li>
+                      <li>
+                        <div class="filter-option"></div>
+                        > 24 hrs
+                      </li>
+                      <li>
+                        <div class="filter-option"></div>
+                        1 week
+                      </li>
+                      <li>
+                        <div class="filter-option"></div>
+                        Unknown
+                      </li>
+                    </ul>          
+                  </div>
+                  
+                  
+                </div>
+                <h4 class="accordion-toggle">Mother
+                  <span class="selection-count">0 / 0</span>
+                </h4>
+                <div class="accordion-content">
+                  <p>Coming soon</p>
+                </div> 
+                <h4 class="accordion-toggle">Delivery
+                  <span class="selection-count">0 / 0</span>
+                </h4>
+                <div class="accordion-content">
+                  <p>Coming soon</p>
+                </div>  
+                <h4 class="accordion-toggle">Care Seeking
+                  <span class="selection-count">0 / 0</span>
+                </h4>
+                <div class="accordion-content">
+                  <p>Coming soon</p>
+                </div>   
+            </div>
+            
+          </div>
+          <!-- end: secondary filter panel -->
+          
+          <!-- start: other map layers panel -->
+          <div class="secondary-filter-panel">
+            <div class="panel-header">
+              <span>other map data layers</span>
+            </div>
+            
+            <ul class="secondary-layers">
+              <li>
+                <a href="#">Distance from Cities</a>
+              </li>
+              <li>
+                <a href="#">Traditional Medicine Used</a>
+              </li>
+              <li>
+                <a href="#">-6yrs of Maternal Education</a>
+              </li>
+              <li>
+                <a href="#">+6yrs of Maternal Education</a>
+              </li>
+            </ul>
+      
+          </div>
+          <!-- end: other map layers panel -->
+          
+          <!-- start: additional information -->
+          <div class="secondary-filter-panel info-panel">
+            <div class="panel-header">
+              <span>Additional Content / Information</span>
+            </div>
+            <div class="padded-panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipis
+cing elit. Nam ornare, lacus eu auctor porttitor, 
+urna sem viverra purus, id porta felis quam ut 
+sapien. In commodo vel diam non sodales. </p>
+            </div>
+          </div>
+          <!-- end: additional information -->
+
+  
+        </div>
+        <!-- end: left panel -->
+        
+        <!-- start: map buttons panel -->
+          <div class="map-buttons-panel">
+            <div class="map-btn btn-map-options">Map Options</div>
+            <div class="map-btn btn-basemap">Base Map</div>
+            <div class="map-btn btn-legend">Legend</div>
+          </div>
+        <!-- end: map buttons panel -->
+
+      </div>
+      <!-- end: dashboard -->
+
+  </div>
+</body>
+
+</html>
